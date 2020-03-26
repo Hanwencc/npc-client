@@ -42,27 +42,6 @@ window.onload = function () {
 
   });
 
-
-  // axios({
-  //   method: 'post',
-  //   url: 'http://127.0.0.1:8088/api/get_client_config',
-  // }).then(res => {
-  //   console.log(res.data)
-  //   if (res.data.code == 200 && res.data.msg == 'success') {
-  //     $(".headimg1").attr("src", res.data.data.swipe[0]);
-  //     $(".headimg2").attr("src", res.data.data.swipe[1]);
-  //     $(".headimg3").attr("src", res.data.data.swipe[2]);
-  //   }
-
-
-  // }).catch(err => {
-
-  // })
-
-
-
-
-
   $('.test1').on('click', () => {
     window.location.href = './buy.html'
   })
@@ -129,13 +108,6 @@ window.onload = function () {
         $('.choose_client').attr('style', 'display')
         is_connect = false
       }
-      // var nps_kill=result.kill(0)
-      // var nps_kill=process.kill(nps_pid)
-      // var nps_kill=result.exit()
-      // var nps_kill=result.end();
-      // result.kill('SIGTERM');
-      // $client_connect.text('已连接')
-
     }
 
 
@@ -144,9 +116,6 @@ window.onload = function () {
     title: "请选择要连接的客户端",
     items: select_iteam,
     onChange: function (d) {
-      // console.log(this, d);
-      // console.log(this);
-      // console.log(d.values);
       var client_id = ((d.values).split(':'))[0]
       for (var i = 0; i < client_list.length; i++) {
         if (client_list[i].Id == client_id) {
@@ -159,10 +128,7 @@ window.onload = function () {
       console.log("close");
     },
     onOpen: function () {
-
       console.log("open");
-      // console.log(client_list);
-
 
     },
   });

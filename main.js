@@ -25,7 +25,30 @@ function init() {
   loadDemos()
 
   function createWindow() {
-
+    function re_cookie (){
+      setInterval(()=>{
+        axios({
+          url: `${server_url}/client/list`,
+          method: 'post',
+          data: qs.stringify({
+            search: '',
+            order: 'asc',
+            offset:'0',
+            limit:'10'
+          }),
+          headers: {
+            cookie: client_cookies
+          }
+        }).then(res=>{
+          // console.log(res.data)
+          
+        }).catch(err=>{
+          console.log(err)
+          
+        })
+      },600000)
+     
+    }
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       width: 360,
@@ -159,6 +182,7 @@ function init() {
         }
       }).then(res=>{
         // console.log(res.data)
+        re_cookie()
         event.returnValue = res.data;
       }).catch(err=>{
         console.log(err)
@@ -212,7 +236,7 @@ function init() {
     mainWindow.loadFile('login.html')
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
   }
 
 
