@@ -30,3 +30,11 @@
 1. nps登录地址(后台可以登录到的nps地址)
 2. 用户名
 3. 密码
+
+
+![](https://s1.ax1x.com/2020/03/27/G9IDUK.png)
+
+
+![](https://s1.ax1x.com/2020/03/27/G9IwHx.png)
+
+![](https://s1.ax1x.com/2020/03/27/G9I68e.png)
