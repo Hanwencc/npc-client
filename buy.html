@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="./static/css/weui.css" />
+    <link rel="stylesheet" href="./static/css/weuix.css" />
+
+    <script src="./static/js/zepto.min.js"></script>
+    <!-- <script src="./static/js/zepto.weui.js"></script> -->
+</head>
+
+<body>
+    <div class="weui-header bg-blue">
+        <div class="weui-header-left"> <a class="icon icon-109 f-white rtback">返回</a> </div>
+        <h1 class="weui-header-title">千里冰封</h1>
+        <div class="weui-header-right"><a class="icon icon-83 f-white">更多</a></div>
+    </div>
+    <div class="weui-pay">
+        <h1 class="weui-payselect-title">停车费</h1>
+        <p class="weui-pay-num">￥15.00</p>
+        <ul class="weui-pay-u">
+            <li>
+                <span class="title">停车优惠</span>
+                <span class="content">5折停车优惠券</span>
+            </li>
+            <li>
+                <span class="title">已停时长</span>
+                <span class="content">1小时23分</span>
+            </li>
+            <li>
+                <span class="title">停车卡号</span>
+                <span class="content">12345678</span>
+            </li>
+            <li>
+                <span class="title">车牌号码</span>
+                <span class="content">粤B·JQ238</span>
+            </li>
+        </ul>
+        <div class="pay-div">
+            <a href="javascript:;" class="weui-btn weui-btn_primary" id="pay">立即支付</a>
+        </div>
+    </div>
+    <script>
+     document.querySelector('.rtback').onclick=function(){
+            window.location.href = './index.html'
+        }
+    
+    
+    </script>
+</body>
+
+</html>

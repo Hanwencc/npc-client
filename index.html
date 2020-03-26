@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./static/css/weui.css" />
+  <link rel="stylesheet" href="./static/css/weuix.css" />
+  <link rel="stylesheet" href="./static/css/center/index.css" />
+
+  <script src="./static/js/zepto.min.js"></script>
+  <script src="./static/js/zepto.weui.js"></script>
+  <script src="./static/js/swipe.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/f2.min.js"></script>
+  <script>
+    $(".loading2").show();
+    const axios = require('axios')
+    const cheerio = require('cheerio');
+    const os = require('os')
+    const ipc = require('electron').ipcRenderer;
+    var cp = require('child_process');
+    var path = require('path');
+    var iconv = require('iconv-lite')
+    $(function () {
+
+      $('.weui-tab').tab({
+        defaultIndex: 0,
+        activeClass: 'weui-bar__item_on',
+        onToggle: function (index) {
+          // if (index == 1) {
+          //   $(".loading2").show();
+
+          //   setTimeout(function () {
+          //     $(".loading2").hide();
+          //   }, 2000)
+          // }
+        }
+      })
+      $('#slide2').swipeSlide({
+        autoSwipe: true,//自动切换默认是
+        speed: 3000,//速度默认4000
+        continuousScroll: true,//默认否
+        transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',//过渡动画linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier
+        lazyLoad: true,//懒加载默认否
+      });
+
+
+
+    })
+
+  </script>
+</head>
+
+<body ontouchstart>
+  <div class="weui-tab" style="height:auto;">
+    <div class="weui-tab__panel">
+      <div id="c0" class="weui-tab__content">
+        <div class="slide" id="slide2" style="">
+          <ul class="head_imgs">
+            <li>
+              <a href="javascript:;">
+                <img onclick="return false;" src='./static/img/3.jpg' alt="" class="headimg1">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                <img onclick="return false;" src='./static/img/2.jpg' alt="" class="headimg2">
+              </a>
+
+            </li>
+            <li>
+              <a href="javascript:;">
+                <img onclick="return false;" src='./static/img/1.jpg' alt="" class="headimg3">
+              </a>
+
+            </li>
+          </ul>
+        </div>
+        <div class="weui-cells weui-cells_form choose_client">
+          <div class="weui-cell">
+            <div class="weui-cell__hd"><label for="job" class="weui-label">点击选择隧道</label></div>
+            <div class="weui-cell__bd">
+              <input class="weui-input" id="job" type="text" value="">
+            </div>
+          </div>
+        </div>
+        <div class="npc_log"></div>
+        <a href="javascript:;" class="client_connect weui-btn weui-btn_primary "><i
+            class="client_connect_i"></i>点击连接</a>
+      </div>
+      <div id="c1" class="weui-tab__content">
+          <canvas id="myChart" height="260"></canvas>
+      </div>
+      <div id="c2" class="weui-tab__content">美国</div>
+      <div id="c3" class="weui-tab__content">
+        我的
+        
+
+
+
+      </div>
+    </div>
+
+    <div class="weui-tabbar tab-bottom">
+      <a href="javascript:;" class="weui-tabbar__item">
+        <span style="display: inline-block;position: relative;">
+          <i class="icon icon-103 f27 weui-tabbar__icon"></i>
+          <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">1</span>
+        </span>
+        <p class="weui-tabbar__label">隧道信息</p>
+      </a>
+      <a href="javascript:;" class="weui-tabbar__item">
+        <i class="icon icon-40 f27 weui-tabbar__icon"></i>
+        <p class="weui-tabbar__label">运行信息</p>
+      </a>
+      <a href="javascript:;" class="weui-tabbar__item">
+        <span style="display: inline-block;position: relative;">
+          <i class="icon icon-65 f27 weui-tabbar__icon"></i>
+          <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+        </span>
+        <p class="weui-tabbar__label">意见反馈</p>
+      </a>
+      <a href="javascript:;" class="weui-tabbar__item ">
+        <i class="icon icon-85 f27 weui-tabbar__icon"></i>
+        <p class="weui-tabbar__label ">我的信息</p>
+      </a>
+    </div>
+  </div>
+  <div class="loading2 hide" data-text="正在刷新节点列表..."></div>
+
+
+
+</body>
+
+</html>
